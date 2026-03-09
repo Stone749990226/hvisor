@@ -327,16 +327,16 @@
 		mmc1 = "/dwmmc@fe2b0000";
 		mmc2 = "/dwmmc@fe2c0000";
 		mmc3 = "/mmc@fe000000";
-		serial0 = "/serial@fdd50000";
-		serial1 = "/serial@fe650000";
-		serial2 = "/serial@fe660000";
-		serial3 = "/serial@fe670000";
-		serial4 = "/serial@fe680000";
-		serial5 = "/serial@fe690000";
-		serial6 = "/serial@fe6a0000";
-		serial7 = "/serial@fe6b0000";
-		serial8 = "/serial@fe6c0000";
-		serial9 = "/serial@fe6d0000";
+		// serial0 = "/serial@fdd50000";
+		// serial1 = "/serial@fe650000";
+		// serial2 = "/serial@fe660000"; // Reserved for zone0
+		// serial3 = "/serial@fe670000";
+		// serial4 = "/serial@fe680000";
+		// serial5 = "/serial@fe690000";
+		// serial6 = "/serial@fe6a0000";
+		// serial7 = "/serial@fe6b0000";
+		// serial8 = "/serial@fe6c0000";
+		// serial9 = "/serial@fe6d0000";
 		spi0 = "/spi@fe610000";
 		spi1 = "/spi@fe620000";
 		spi2 = "/spi@fe630000";
@@ -348,7 +348,7 @@
 
 	memory {
 		device_type = "memory";
-		reg = <0x00 0x200000 0x00 0x8200000 0x00 0x9400000 0x00 0x76c00000 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+		reg = <0x00 0x50000000 0x00 0x04000000 0x00 0x10000000 0x00 0x20000000 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
 	};
 
 	cpus {
@@ -754,31 +754,26 @@
 		ranges;
 		#address-cells = <0x02>;
 
-		drm-cubic-lut@0 {
-			compatible = "rockchip,drm-cubic-lut";
-			phandle = <0x10>;
-			reg = <0x00 0x7ff00000 0x00 0x8000>;
-		};
+		// drm-cubic-lut@0 {
+		// 	compatible = "rockchip,drm-cubic-lut";
+		// 	phandle = <0x10>;
+		// 	reg = <0x00 0x7ff00000 0x00 0x8000>;
+		// };
 
-		drm-logo@0 {
-			compatible = "rockchip,drm-logo";
-			phandle = <0x0f>;
-			reg = <0x00 0x7df00000 0x00 0xa8e000>;
-		};
+		// drm-logo@0 {
+		// 	compatible = "rockchip,drm-logo";
+		// 	phandle = <0x0f>;
+		// 	reg = <0x00 0x7df00000 0x00 0xa8e000>;
+		// };
 
-		ramoops@110000 {
-			compatible = "ramoops";
-			record-size = <0x20000>;
-			console-size = <0x80000>;
-			reg = <0x00 0x110000 0x00 0xf0000>;
-			blackbox-size = <0x50000>;
-			ftrace-size = <0x00>;
-			pmsg-size = <0x00>;
-		};
-
-		// nonroot {
-		// 	no-map;
-		// 	reg = <0x00 0x40000000 0x00 0x20000000>;
+		// ramoops@110000 {
+		// 	compatible = "ramoops";
+		// 	record-size = <0x20000>;
+		// 	console-size = <0x80000>;
+		// 	reg = <0x00 0x110000 0x00 0xf0000>;
+		// 	blackbox-size = <0x50000>;
+		// 	ftrace-size = <0x00>;
+		// 	pmsg-size = <0x00>;
 		// };
 	};
 
@@ -1574,19 +1569,19 @@
 		};
 	};
 
-	serial@fdd50000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfdd50000 0x00 0x100>;
-		interrupts = <0x00 0x74 0x04>;
-		clocks = <0x3a 0x0b 0x3a 0x2c>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x00 0x48 0x01>;
-		pinctrl-0 = <0x49>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fdd50000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfdd50000 0x00 0x100>;
+	// 	interrupts = <0x00 0x74 0x04>;
+	// 	clocks = <0x3a 0x0b 0x3a 0x2c>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x00 0x48 0x01>;
+	// 	pinctrl-0 = <0x49>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
 	pwm@fdd70000 {
 		compatible = "rockchip,rk3568-pwm\0rockchip,rk3328-pwm";
@@ -3191,41 +3186,41 @@
 		};
 	};
 
-	dwmmc@fe2b0000 {
-		compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
-		reg = <0x00 0xfe2b0000 0x00 0x4000>;
-		interrupts = <0x00 0x62 0x04>;
-		clocks = <0x24 0xb0 0x24 0xb1 0x24 0x18a 0x24 0x18b>;
-		clock-names = "biu\0ciu\0ciu-drive\0ciu-sample";
-		fifo-depth = <0x100>;
-		max-frequency = <0x8f0d180>;
-		resets = <0x24 0xd4>;
-		reset-names = "reset";
-		status = "okay";
-		supports-sd;
-		bus-width = <0x04>;
-		cap-mmc-highspeed;
-		cap-sd-highspeed;
-		disable-wp;
-		sd-uhs-sdr104;
-		vmmc-supply = <0xc4>;
-		vqmmc-supply = <0x31>;
-		pinctrl-names = "default";
-		pinctrl-0 = <0xc5 0xc6 0xc7 0xc8>;
-	};
+	// dwmmc@fe2b0000 {
+	// 	compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
+	// 	reg = <0x00 0xfe2b0000 0x00 0x4000>;
+	// 	interrupts = <0x00 0x62 0x04>;
+	// 	clocks = <0x24 0xb0 0x24 0xb1 0x24 0x18a 0x24 0x18b>;
+	// 	clock-names = "biu\0ciu\0ciu-drive\0ciu-sample";
+	// 	fifo-depth = <0x100>;
+	// 	max-frequency = <0x8f0d180>;
+	// 	resets = <0x24 0xd4>;
+	// 	reset-names = "reset";
+	// 	status = "okay";
+	// 	supports-sd;
+	// 	bus-width = <0x04>;
+	// 	cap-mmc-highspeed;
+	// 	cap-sd-highspeed;
+	// 	disable-wp;
+	// 	sd-uhs-sdr104;
+	// 	vmmc-supply = <0xc4>;
+	// 	vqmmc-supply = <0x31>;
+	// 	pinctrl-names = "default";
+	// 	pinctrl-0 = <0xc5 0xc6 0xc7 0xc8>;
+	// };
 
-	dwmmc@fe2c0000 {
-		compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
-		reg = <0x00 0xfe2c0000 0x00 0x4000>;
-		interrupts = <0x00 0x63 0x04>;
-		clocks = <0x24 0xb2 0x24 0xb3 0x24 0x18c 0x24 0x18d>;
-		clock-names = "biu\0ciu\0ciu-drive\0ciu-sample";
-		fifo-depth = <0x100>;
-		max-frequency = <0x8f0d180>;
-		resets = <0x24 0xd6>;
-		reset-names = "reset";
-		status = "disabled";
-	};
+	// dwmmc@fe2c0000 {
+	// 	compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
+	// 	reg = <0x00 0xfe2c0000 0x00 0x4000>;
+	// 	interrupts = <0x00 0x63 0x04>;
+	// 	clocks = <0x24 0xb2 0x24 0xb3 0x24 0x18c 0x24 0x18d>;
+	// 	clock-names = "biu\0ciu\0ciu-drive\0ciu-sample";
+	// 	fifo-depth = <0x100>;
+	// 	max-frequency = <0x8f0d180>;
+	// 	resets = <0x24 0xd6>;
+	// 	reset-names = "reset";
+	// 	status = "disabled";
+	// };
 
 	spi@fe300000 {
 		compatible = "rockchip,sfc";
@@ -3969,131 +3964,132 @@
 	// 	status = "disabled";
 	// };
 
-	serial@fe650000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe650000 0x00 0x100>;
-		interrupts = <0x00 0x75 0x04>;
-		clocks = <0x24 0x11f 0x24 0x11c>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x02 0x48 0x03>;
-		pinctrl-0 = <0x105 0x106>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fe650000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe650000 0x00 0x100>;
+	// 	interrupts = <0x00 0x75 0x04>;
+	// 	clocks = <0x24 0x11f 0x24 0x11c>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x02 0x48 0x03>;
+	// 	pinctrl-0 = <0x105 0x106>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
-	serial@fe660000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe660000 0x00 0x100>;
-		interrupts = <0x00 0x76 0x04>;
-		clocks = <0x24 0x123 0x24 0x120>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x04 0x48 0x05>;
-		pinctrl-0 = <0x107>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fe660000 - Reserved for zone0, removed from zone1
+	// serial@fe660000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe660000 0x00 0x100>;
+	// 	interrupts = <0x00 0x76 0x04>;
+	// 	clocks = <0x24 0x123 0x24 0x120>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x04 0x48 0x05>;
+	// 	pinctrl-0 = <0x107>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
-	serial@fe670000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe670000 0x00 0x100>;
-		interrupts = <0x00 0x77 0x04>;
-		clocks = <0x24 0x127 0x24 0x124>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x06 0x48 0x07>;
-		pinctrl-0 = <0x108>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "okay";
-	};
+	// serial@fe670000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe670000 0x00 0x100>;
+	// 	interrupts = <0x00 0x77 0x04>;
+	// 	clocks = <0x24 0x127 0x24 0x124>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x06 0x48 0x07>;
+	// 	pinctrl-0 = <0x108>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "okay";
+	// };
 
-	serial@fe680000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe680000 0x00 0x100>;
-		interrupts = <0x00 0x78 0x04>;
-		clocks = <0x24 0x12b 0x24 0x128>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x08 0x48 0x09>;
-		pinctrl-0 = <0x109>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "okay";
-	};
+	// serial@fe680000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe680000 0x00 0x100>;
+	// 	interrupts = <0x00 0x78 0x04>;
+	// 	clocks = <0x24 0x12b 0x24 0x128>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x08 0x48 0x09>;
+	// 	pinctrl-0 = <0x109>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "okay";
+	// };
 
-	serial@fe690000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe690000 0x00 0x100>;
-		interrupts = <0x00 0x79 0x04>;
-		clocks = <0x24 0x12f 0x24 0x12c>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x0a 0x48 0x0b>;
-		pinctrl-0 = <0x10a>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fe690000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe690000 0x00 0x100>;
+	// 	interrupts = <0x00 0x79 0x04>;
+	// 	clocks = <0x24 0x12f 0x24 0x12c>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x0a 0x48 0x0b>;
+	// 	pinctrl-0 = <0x10a>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
-	serial@fe6a0000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe6a0000 0x00 0x100>;
-		interrupts = <0x00 0x7a 0x04>;
-		clocks = <0x24 0x133 0x24 0x130>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x0c 0x48 0x0d>;
-		pinctrl-0 = <0x10b>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fe6a0000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe6a0000 0x00 0x100>;
+	// 	interrupts = <0x00 0x7a 0x04>;
+	// 	clocks = <0x24 0x133 0x24 0x130>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x0c 0x48 0x0d>;
+	// 	pinctrl-0 = <0x10b>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
-	serial@fe6b0000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe6b0000 0x00 0x100>;
-		interrupts = <0x00 0x7b 0x04>;
-		clocks = <0x24 0x137 0x24 0x134>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x0e 0x48 0x0f>;
-		pinctrl-0 = <0x10c>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fe6b0000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe6b0000 0x00 0x100>;
+	// 	interrupts = <0x00 0x7b 0x04>;
+	// 	clocks = <0x24 0x137 0x24 0x134>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x0e 0x48 0x0f>;
+	// 	pinctrl-0 = <0x10c>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
-	serial@fe6c0000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe6c0000 0x00 0x100>;
-		interrupts = <0x00 0x7c 0x04>;
-		clocks = <0x24 0x13b 0x24 0x138>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x10 0x48 0x11>;
-		pinctrl-0 = <0x10d 0x10e>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "okay";
-	};
+	// serial@fe6c0000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe6c0000 0x00 0x100>;
+	// 	interrupts = <0x00 0x7c 0x04>;
+	// 	clocks = <0x24 0x13b 0x24 0x138>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x10 0x48 0x11>;
+	// 	pinctrl-0 = <0x10d 0x10e>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "okay";
+	// };
 
-	serial@fe6d0000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe6d0000 0x00 0x100>;
-		interrupts = <0x00 0x7d 0x04>;
-		clocks = <0x24 0x13f 0x24 0x13c>;
-		clock-names = "baudclk\0apb_pclk";
-		dmas = <0x48 0x12 0x48 0x13>;
-		pinctrl-0 = <0x10f>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "disabled";
-	};
+	// serial@fe6d0000 {
+	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+	// 	reg = <0x00 0xfe6d0000 0x00 0x100>;
+	// 	interrupts = <0x00 0x7d 0x04>;
+	// 	clocks = <0x24 0x13f 0x24 0x13c>;
+	// 	clock-names = "baudclk\0apb_pclk";
+	// 	dmas = <0x48 0x12 0x48 0x13>;
+	// 	pinctrl-0 = <0x10f>;
+	// 	pinctrl-names = "default";
+	// 	reg-io-width = <0x04>;
+	// 	reg-shift = <0x02>;
+	// 	status = "disabled";
+	// };
 
 	// pwm@fe6e0000 {
 	// 	compatible = "rockchip,rk3568-pwm\0rockchip,rk3328-pwm";
@@ -6231,23 +6227,29 @@
 	// };
 
 	chosen {
-		bootargs = "earlycon=uart8250,mmio32,0xfe660000 console=ttyFIQ0 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
-		linux,initrd-start = <0x00 0xa200000>;
-		// linux,initrd-end = <0x00 0xA423E10>;
-		linux,initrd-end = <0x00 0xa600000>;
+		bootargs = "clk_ignore_unused earlycon=virtio,mmio,0xff9e0000 console=hvc0 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
+		linux,initrd-start = <0x00 0x50200000>;
+		linux,initrd-end = <0x00 0x50600000>;
 	};
 
-	fiq-debugger {
-		compatible = "rockchip,fiq-debugger";
-		rockchip,serial-id = <0x02>;
-		rockchip,wake-irq = <0x00>;
-		rockchip,irq-mode-enable = <0x01>;
-		rockchip,baudrate = <0x16e360>;
-		interrupts = <0x00 0xfc 0x08>;
-		pinctrl-names = "default";
-		pinctrl-0 = <0x107>;
-		status = "okay";
-	};
+	// chosen {
+	// 	bootargs = "clk_ignore_unused console=ttyS3,1500000 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
+	// 	stdout-path = "serial3:1500000n8";
+	// 	linux,initrd-start = <0x00 0x50200000>;
+	// 	linux,initrd-end = <0x00 0x50600000>;
+	// };
+
+	// fiq-debugger {
+	// 	compatible = "rockchip,fiq-debugger";
+	// 	rockchip,serial-id = <0x02>;
+	// 	rockchip,wake-irq = <0x00>;
+	// 	rockchip,irq-mode-enable = <0x01>;
+	// 	rockchip,baudrate = <0x16e360>;
+	// 	interrupts = <0x00 0xfc 0x08>;
+	// 	pinctrl-names = "default";
+	// 	pinctrl-0 = <0x107>;
+	// 	status = "okay";
+	// };
 
 	debug@fd904000 {
 		compatible = "rockchip,debug";

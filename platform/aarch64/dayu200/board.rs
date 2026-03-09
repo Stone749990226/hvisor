@@ -51,7 +51,7 @@ pub const ROOT_ZONE_ENTRY: u64 = 0x61000000;
 pub const ROOT_ZONE_CPUS: u64 = (1 << 0) | (1 << 1);
 
 pub const ROOT_ZONE_NAME: &str = "root-linux";
-pub const ROOT_ZONE_MEMORY_REGIONS: [HvConfigMemoryRegion; 6] = [
+pub const ROOT_ZONE_MEMORY_REGIONS: [HvConfigMemoryRegion; 8] = [
     HvConfigMemoryRegion {
         mem_type: MEM_TYPE_IO,
         physical_start: 0x100000,
@@ -62,7 +62,19 @@ pub const ROOT_ZONE_MEMORY_REGIONS: [HvConfigMemoryRegion; 6] = [
         mem_type: MEM_TYPE_IO,
         physical_start: 0xF0000000,
         virtual_start: 0xF0000000,
-        size: 0xF000000,
+        size: 0xD400000, // 到 GIC 之前
+    },
+    HvConfigMemoryRegion {
+        mem_type: MEM_TYPE_IO,
+        physical_start: 0xfd410000,
+        virtual_start: 0xfd410000,
+        size: 0x50000,
+    },
+    HvConfigMemoryRegion {
+        mem_type: MEM_TYPE_IO,
+        physical_start: 0xfd520000,
+        virtual_start: 0xfd520000,
+        size: 0x1AE0000, // GIC 之后到 0xFF000000
     },
     HvConfigMemoryRegion {
         mem_type: MEM_TYPE_IO,
@@ -87,7 +99,7 @@ pub const ROOT_ZONE_MEMORY_REGIONS: [HvConfigMemoryRegion; 6] = [
         physical_start: 0x110000,
         virtual_start: 0x110000,
         size: 0xf0000,
-    }, // memory
+    }, // memory ramoops
 ];
 
 // pub const ROOT_ZONE_MEMORY_REGIONS: [HvConfigMemoryRegion; 18] = [

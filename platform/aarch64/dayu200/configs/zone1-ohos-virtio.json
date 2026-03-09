@@ -4,14 +4,14 @@
             "id": 1,
             "memory_region": [
                 {
-                    "zone0_ipa": "0x20000000",
-                    "zonex_ipa": "0x20000000",
+                    "zone0_ipa": "0x50000000",
+                    "zonex_ipa": "0x50000000",
                     "size": "0x04000000"
                 },
                 {
-                    "zone0_ipa": "0x24000000",
-                    "zonex_ipa": "0x24000000",
-                    "size": "0x16000000"
+                    "zone0_ipa": "0x10000000",
+                    "zonex_ipa": "0x10000000",
+                    "size": "0x20000000"
                 }
             ],
             "devices": [

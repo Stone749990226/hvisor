@@ -9,9 +9,15 @@
     "memory_regions": [
         {
             "type": "ram",
-            "physical_start": "0x20000000",
-            "virtual_start": "0x20000000",
-            "size": "0x10000000"
+            "physical_start": "0x10000000",
+            "virtual_start": "0x10000000",
+            "size": "0x20000000"
+        },
+        {
+            "type": "ram",
+            "physical_start": "0x50000000",
+            "virtual_start": "0x50000000",
+            "size": "0x04000000"
         },
         {
             "type": "virtio",
@@ -29,7 +35,19 @@
             "type": "io",
             "physical_start": "0xf0000000",
             "virtual_start": "0xf0000000",
-            "size": "0xf000000"
+            "size": "0xd400000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0xfd400000",
+            "virtual_start": "0xfd400000",
+            "size": "0x120000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0xfd520000",
+            "virtual_start": "0xfd520000",
+            "size": "0x1ae0000"
         },
         {
             "type": "io",
@@ -84,7 +102,6 @@
         "0x93",
         "0x94",
         "0x95",
-        "0x96",
         "0x97",
         "0x98",
         "0x99",
@@ -186,7 +203,6 @@
         "0x119",
         "0x11a",
         "0x11b",
-        "0x11c",
         "0x11d",
         "0x11e",
         "0x11f",
