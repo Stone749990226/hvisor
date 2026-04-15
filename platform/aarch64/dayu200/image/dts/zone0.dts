@@ -348,7 +348,18 @@
 
 	memory {
 		device_type = "memory";
-		reg = <0x00 0x200000 0x00 0x8200000 0x00 0x9400000 0x00 0x76c00000 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+		reg = <0x00 0x200000 0x00 0x8200000 
+			   0x00 0x9400000 0x00 0x76c00000 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00 
+			   0x00 0x00 0x00 0x00>;
 	};
 
 	cpus {
@@ -545,70 +556,70 @@
 	// 	nvmem-cell-names = "id\0cpu-version\0cpu-code";
 	// };
 
-	display_subsystem: display-subsystem {
-		compatible = "rockchip,display-subsystem";
-		memory-region = <0x0f 0x10>;
-		memory-region-names = "drm-logo\0drm-cubic-lut";
-		ports = <0x11>;
-		devfreq = <0x12>;
+	// display-subsystem {
+	// 	compatible = "rockchip,display-subsystem";
+	// 	memory-region = <0x0f 0x10>;
+	// 	memory-region-names = "drm-logo\0drm-cubic-lut";
+	// 	ports = <0x11>;
+	// 	devfreq = <0x12>;
 
-		route {
+	// 	route {
 
-			route-dsi0 {
-				status = "okay";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x13>;
-			};
+	// 		route-dsi0 {
+	// 			status = "okay";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x13>;
+	// 		};
 
-			route-dsi1 {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x14>;
-			};
+	// 		route-dsi1 {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x14>;
+	// 		};
 
-			route-edp {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x15>;
-			};
+	// 		route-edp {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x15>;
+	// 		};
 
-			route-hdmi {
-				status = "okay";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x16>;
-			};
+	// 		route-hdmi {
+	// 			status = "okay";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x16>;
+	// 		};
 
-			route-lvds {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x17>;
-			};
+	// 		route-lvds {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x17>;
+	// 		};
 
-			route-rgb {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x18>;
-			};
-		};
-	};
+	// 		route-rgb {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x18>;
+	// 		};
+	// 	};
+	// };
 
 	firmware {
 
@@ -768,15 +779,16 @@
 		// 	reg = <0x00 0x7df00000 0x00 0xa8e000>;
 		// };
 
-		ramoops@110000 {
-			compatible = "ramoops";
-			record-size = <0x20000>;
-			console-size = <0x80000>;
-			reg = <0x00 0x110000 0x00 0xf0000>;
-			blackbox-size = <0x50000>;
-			ftrace-size = <0x00>;
-			pmsg-size = <0x00>;
-		};
+		// ramoops@110000 {
+		// 	compatible = "ramoops";
+		// 	record-size = <0x20000>;
+		// 	console-size = <0x80000>;
+		// 	reg = <0x00 0x110000 0x00 0xf0000>;
+		// 	blackbox-size = <0x50000>;
+		// 	ftrace-size = <0x00>;
+		// 	pmsg-size = <0x00>;
+		// 	status = "disabled";
+		// };
 
 		hvisor@40400000 {
 			no-map;
@@ -917,71 +929,71 @@
 	// 	status = "okay";
 	// };
 
-	usbdrd {
-		compatible = "rockchip,rk3568-dwc3\0rockchip,rk3399-dwc3";
-		clocks = <0x24 0xa6 0x24 0xa7 0x24 0xa5 0x24 0x7f>;
-		clock-names = "ref_clk\0suspend_clk\0bus_clk\0pipe_clk";
-		#address-cells = <0x02>;
-		#size-cells = <0x02>;
-		ranges;
-		status = "okay";
+	// usbdrd {
+	// 	compatible = "rockchip,rk3568-dwc3\0rockchip,rk3399-dwc3";
+	// 	clocks = <0x24 0xa6 0x24 0xa7 0x24 0xa5 0x24 0x7f>;
+	// 	clock-names = "ref_clk\0suspend_clk\0bus_clk\0pipe_clk";
+	// 	#address-cells = <0x02>;
+	// 	#size-cells = <0x02>;
+	// 	ranges;
+	// 	status = "okay";
 
-		dwc3@fcc00000 {
-			compatible = "snps,dwc3";
-			reg = <0x00 0xfcc00000 0x00 0x400000>;
-			interrupts = <0x00 0xa9 0x04>;
-			dr_mode = "otg";
-			phy_type = "utmi_wide";
-			power-domains = <0x26 0x0f>;
-			resets = <0x24 0x94>;
-			reset-names = "usb3-otg";
-			snps,dis_enblslpm_quirk;
-			snps,dis-u1-entry-quirk;
-			snps,dis-u2-entry-quirk;
-			snps,dis-u2-freeclk-exists-quirk;
-			snps,dis-del-phy-power-chg-quirk;
-			snps,dis-tx-ipgap-linecheck-quirk;
-			snps,dis_rxdet_inp3_quirk;
-			snps,parkmode-disable-hs-quirk;
-			snps,parkmode-disable-ss-quirk;
-			quirk-skip-phy-init;
-			status = "okay";
-			phys = <0x28 0x29 0x04>;
-			phy-names = "usb2-phy\0usb3-phy";
-			extcon = <0x2a>;
-		};
-	};
+	// 	dwc3@fcc00000 {
+	// 		compatible = "snps,dwc3";
+	// 		reg = <0x00 0xfcc00000 0x00 0x400000>;
+	// 		interrupts = <0x00 0xa9 0x04>;
+	// 		dr_mode = "otg";
+	// 		phy_type = "utmi_wide";
+	// 		power-domains = <0x26 0x0f>;
+	// 		resets = <0x24 0x94>;
+	// 		reset-names = "usb3-otg";
+	// 		snps,dis_enblslpm_quirk;
+	// 		snps,dis-u1-entry-quirk;
+	// 		snps,dis-u2-entry-quirk;
+	// 		snps,dis-u2-freeclk-exists-quirk;
+	// 		snps,dis-del-phy-power-chg-quirk;
+	// 		snps,dis-tx-ipgap-linecheck-quirk;
+	// 		snps,dis_rxdet_inp3_quirk;
+	// 		snps,parkmode-disable-hs-quirk;
+	// 		snps,parkmode-disable-ss-quirk;
+	// 		quirk-skip-phy-init;
+	// 		status = "okay";
+	// 		phys = <0x28 0x29 0x04>;
+	// 		phy-names = "usb2-phy\0usb3-phy";
+	// 		extcon = <0x2a>;
+	// 	};
+	// };
 
-	usbhost {
-		compatible = "rockchip,rk3568-dwc3\0rockchip,rk3399-dwc3";
-		clocks = <0x24 0xa9 0x24 0xaa 0x24 0xa8 0x24 0x7f>;
-		clock-names = "ref_clk\0suspend_clk\0bus_clk\0pipe_clk";
-		#address-cells = <0x02>;
-		#size-cells = <0x02>;
-		ranges;
-		status = "okay";
+	// usbhost {
+	// 	compatible = "rockchip,rk3568-dwc3\0rockchip,rk3399-dwc3";
+	// 	clocks = <0x24 0xa9 0x24 0xaa 0x24 0xa8 0x24 0x7f>;
+	// 	clock-names = "ref_clk\0suspend_clk\0bus_clk\0pipe_clk";
+	// 	#address-cells = <0x02>;
+	// 	#size-cells = <0x02>;
+	// 	ranges;
+	// 	status = "okay";
 
-		dwc3@fd000000 {
-			compatible = "snps,dwc3";
-			reg = <0x00 0xfd000000 0x00 0x400000>;
-			interrupts = <0x00 0xaa 0x04>;
-			dr_mode = "host";
-			phys = <0x2b 0x25 0x04>;
-			phy-names = "usb2-phy\0usb3-phy";
-			phy_type = "utmi_wide";
-			power-domains = <0x26 0x0f>;
-			resets = <0x24 0x95>;
-			reset-names = "usb3-host";
-			snps,dis_enblslpm_quirk;
-			snps,dis-u2-freeclk-exists-quirk;
-			snps,dis-del-phy-power-chg-quirk;
-			snps,dis-tx-ipgap-linecheck-quirk;
-			snps,dis_rxdet_inp3_quirk;
-			snps,parkmode-disable-hs-quirk;
-			snps,parkmode-disable-ss-quirk;
-			status = "okay";
-		};
-	};
+	// 	dwc3@fd000000 {
+	// 		compatible = "snps,dwc3";
+	// 		reg = <0x00 0xfd000000 0x00 0x400000>;
+	// 		interrupts = <0x00 0xaa 0x04>;
+	// 		dr_mode = "host";
+	// 		phys = <0x2b 0x25 0x04>;
+	// 		phy-names = "usb2-phy\0usb3-phy";
+	// 		phy_type = "utmi_wide";
+	// 		power-domains = <0x26 0x0f>;
+	// 		resets = <0x24 0x95>;
+	// 		reset-names = "usb3-host";
+	// 		snps,dis_enblslpm_quirk;
+	// 		snps,dis-u2-freeclk-exists-quirk;
+	// 		snps,dis-del-phy-power-chg-quirk;
+	// 		snps,dis-tx-ipgap-linecheck-quirk;
+	// 		snps,dis_rxdet_inp3_quirk;
+	// 		snps,parkmode-disable-hs-quirk;
+	// 		snps,parkmode-disable-ss-quirk;
+	// 		status = "okay";
+	// 	};
+	// };
 
 	interrupt-controller@fd400000 {
 		compatible = "arm,gic-v3";
@@ -1003,49 +1015,49 @@
 		};
 	};
 
-	usb@fd800000 {
-		compatible = "generic-ehci";
-		reg = <0x00 0xfd800000 0x00 0x40000>;
-		interrupts = <0x00 0x82 0x04>;
-		clocks = <0x24 0xbd 0x24 0xbe 0x24 0xbc 0x2c>;
-		clock-names = "usbhost\0arbiter\0pclk\0utmi";
-		phys = <0x2d>;
-		phy-names = "usb2-phy";
-		status = "okay";
-	};
+	// usb@fd800000 {
+	// 	compatible = "generic-ehci";
+	// 	reg = <0x00 0xfd800000 0x00 0x40000>;
+	// 	interrupts = <0x00 0x82 0x04>;
+	// 	clocks = <0x24 0xbd 0x24 0xbe 0x24 0xbc 0x2c>;
+	// 	clock-names = "usbhost\0arbiter\0pclk\0utmi";
+	// 	phys = <0x2d>;
+	// 	phy-names = "usb2-phy";
+	// 	status = "okay";
+	// };
 
-	usb@fd840000 {
-		compatible = "generic-ohci";
-		reg = <0x00 0xfd840000 0x00 0x40000>;
-		interrupts = <0x00 0x83 0x04>;
-		clocks = <0x24 0xbd 0x24 0xbe 0x24 0xbc 0x2c>;
-		clock-names = "usbhost\0arbiter\0pclk\0utmi";
-		phys = <0x2d>;
-		phy-names = "usb2-phy";
-		status = "okay";
-	};
+	// usb@fd840000 {
+	// 	compatible = "generic-ohci";
+	// 	reg = <0x00 0xfd840000 0x00 0x40000>;
+	// 	interrupts = <0x00 0x83 0x04>;
+	// 	clocks = <0x24 0xbd 0x24 0xbe 0x24 0xbc 0x2c>;
+	// 	clock-names = "usbhost\0arbiter\0pclk\0utmi";
+	// 	phys = <0x2d>;
+	// 	phy-names = "usb2-phy";
+	// 	status = "okay";
+	// };
 
-	usb@fd880000 {
-		compatible = "generic-ehci";
-		reg = <0x00 0xfd880000 0x00 0x40000>;
-		interrupts = <0x00 0x85 0x04>;
-		clocks = <0x24 0xbf 0x24 0xc0 0x24 0xbc 0x2c>;
-		clock-names = "usbhost\0arbiter\0pclk\0utmi";
-		phys = <0x2e>;
-		phy-names = "usb2-phy";
-		status = "okay";
-	};
+	// usb@fd880000 {
+	// 	compatible = "generic-ehci";
+	// 	reg = <0x00 0xfd880000 0x00 0x40000>;
+	// 	interrupts = <0x00 0x85 0x04>;
+	// 	clocks = <0x24 0xbf 0x24 0xc0 0x24 0xbc 0x2c>;
+	// 	clock-names = "usbhost\0arbiter\0pclk\0utmi";
+	// 	phys = <0x2e>;
+	// 	phy-names = "usb2-phy";
+	// 	status = "okay";
+	// };
 
-	usb@fd8c0000 {
-		compatible = "generic-ohci";
-		reg = <0x00 0xfd8c0000 0x00 0x40000>;
-		interrupts = <0x00 0x86 0x04>;
-		clocks = <0x24 0xbf 0x24 0xc0 0x24 0xbc 0x2c>;
-		clock-names = "usbhost\0arbiter\0pclk\0utmi";
-		phys = <0x2e>;
-		phy-names = "usb2-phy";
-		status = "okay";
-	};
+	// usb@fd8c0000 {
+	// 	compatible = "generic-ohci";
+	// 	reg = <0x00 0xfd8c0000 0x00 0x40000>;
+	// 	interrupts = <0x00 0x86 0x04>;
+	// 	clocks = <0x24 0xbf 0x24 0xc0 0x24 0xbc 0x2c>;
+	// 	clock-names = "usbhost\0arbiter\0pclk\0utmi";
+	// 	phys = <0x2e>;
+	// 	phy-names = "usb2-phy";
+	// 	status = "okay";
+	// };
 
 	syscon@fda00000 {
 		compatible = "rockchip,rk3568-xpcs\0syscon";
@@ -3207,28 +3219,29 @@
 		};
 	};
 
-	dwmmc@fe2b0000 {
-		compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
-		reg = <0x00 0xfe2b0000 0x00 0x4000>;
-		interrupts = <0x00 0x62 0x04>;
-		clocks = <0x24 0xb0 0x24 0xb1 0x24 0x18a 0x24 0x18b>;
-		clock-names = "biu\0ciu\0ciu-drive\0ciu-sample";
-		fifo-depth = <0x100>;
-		max-frequency = <0x8f0d180>;
-		resets = <0x24 0xd4>;
-		reset-names = "reset";
-		status = "okay";
-		supports-sd;
-		bus-width = <0x04>;
-		cap-mmc-highspeed;
-		cap-sd-highspeed;
-		disable-wp;
-		sd-uhs-sdr104;
-		vmmc-supply = <0xc4>;
-		vqmmc-supply = <0x31>;
-		pinctrl-names = "default";
-		pinctrl-0 = <0xc5 0xc6 0xc7 0xc8>;
-	};
+	// 禁用zone0的SD卡，留着给zone1使用
+	// dwmmc@fe2b0000 {
+	// 	compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
+	// 	reg = <0x00 0xfe2b0000 0x00 0x4000>;
+	// 	interrupts = <0x00 0x62 0x04>;
+	// 	clocks = <0x24 0xb0 0x24 0xb1 0x24 0x18a 0x24 0x18b>;
+	// 	clock-names = "biu\0ciu\0ciu-drive\0ciu-sample";
+	// 	fifo-depth = <0x100>;
+	// 	max-frequency = <0x8f0d180>;
+	// 	resets = <0x24 0xd4>;
+	// 	reset-names = "reset";
+	// 	status = "okay";
+	// 	supports-sd;
+	// 	bus-width = <0x04>;
+	// 	cap-mmc-highspeed;
+	// 	cap-sd-highspeed;
+	// 	disable-wp;
+	// 	sd-uhs-sdr104;
+	// 	vmmc-supply = <0xc4>;
+	// 	vqmmc-supply = <0x31>;
+	// 	pinctrl-names = "default";
+	// 	pinctrl-0 = <0xc5 0xc6 0xc7 0xc8>;
+	// };
 
 	dwmmc@fe2c0000 {
 		compatible = "rockchip,rk3568-dw-mshc\0rockchip,rk3288-dw-mshc";
@@ -4532,60 +4545,60 @@
 	// 	status = "disabled";
 	// };
 
-	usb2-phy@fe8a0000 {
-		compatible = "rockchip,rk3568-usb2phy";
-		reg = <0x00 0xfe8a0000 0x00 0x10000>;
-		clocks = <0x3a 0x13>;
-		clock-names = "phyclk";
-		clock-output-names = "usb480m_phy";
-		interrupts = <0x00 0x87 0x04>;
-		rockchip,usbgrf = <0x130>;
-		#clock-cells = <0x00>;
-		assigned-clocks = <0x24 0x0b>;
-		assigned-clock-parents = <0x2a>;
-		status = "okay";
-		phandle = <0x2a>;
+	// usb2-phy@fe8a0000 {
+	// 	compatible = "rockchip,rk3568-usb2phy";
+	// 	reg = <0x00 0xfe8a0000 0x00 0x10000>;
+	// 	clocks = <0x3a 0x13>;
+	// 	clock-names = "phyclk";
+	// 	clock-output-names = "usb480m_phy";
+	// 	interrupts = <0x00 0x87 0x04>;
+	// 	rockchip,usbgrf = <0x130>;
+	// 	#clock-cells = <0x00>;
+	// 	assigned-clocks = <0x24 0x0b>;
+	// 	assigned-clock-parents = <0x2a>;
+	// 	status = "okay";
+	// 	phandle = <0x2a>;
 
-		host-port {
-			#phy-cells = <0x00>;
-			status = "okay";
-			phy-supply = <0x131>;
-			phandle = <0x2b>;
-		};
+	// 	host-port {
+	// 		#phy-cells = <0x00>;
+	// 		status = "okay";
+	// 		phy-supply = <0x131>;
+	// 		phandle = <0x2b>;
+	// 	};
 
-		otg-port {
-			#phy-cells = <0x00>;
-			status = "okay";
-			vbus-supply = <0x132>;
-			phandle = <0x28>;
-		};
-	};
+	// 	otg-port {
+	// 		#phy-cells = <0x00>;
+	// 		status = "okay";
+	// 		vbus-supply = <0x132>;
+	// 		phandle = <0x28>;
+	// 	};
+	// };
 
-	usb2-phy@fe8b0000 {
-		compatible = "rockchip,rk3568-usb2phy";
-		reg = <0x00 0xfe8b0000 0x00 0x10000>;
-		clocks = <0x3a 0x15>;
-		clock-names = "phyclk";
-		interrupts = <0x00 0x88 0x04>;
-		rockchip,usbgrf = <0x133>;
-		#clock-cells = <0x00>;
-		status = "okay";
-		phandle = <0x2c>;
+	// usb2-phy@fe8b0000 {
+	// 	compatible = "rockchip,rk3568-usb2phy";
+	// 	reg = <0x00 0xfe8b0000 0x00 0x10000>;
+	// 	clocks = <0x3a 0x15>;
+	// 	clock-names = "phyclk";
+	// 	interrupts = <0x00 0x88 0x04>;
+	// 	rockchip,usbgrf = <0x133>;
+	// 	#clock-cells = <0x00>;
+	// 	status = "okay";
+	// 	phandle = <0x2c>;
 
-		host-port {
-			#phy-cells = <0x00>;
-			status = "okay";
-			phy-supply = <0x131>;
-			phandle = <0x2e>;
-		};
+	// 	host-port {
+	// 		#phy-cells = <0x00>;
+	// 		status = "okay";
+	// 		phy-supply = <0x131>;
+	// 		phandle = <0x2e>;
+	// 	};
 
-		otg-port {
-			#phy-cells = <0x00>;
-			status = "okay";
-			phy-supply = <0x131>;
-			phandle = <0x2d>;
-		};
-	};
+	// 	otg-port {
+	// 		#phy-cells = <0x00>;
+	// 		status = "okay";
+	// 		phy-supply = <0x131>;
+	// 		phandle = <0x2d>;
+	// 	};
+	// };
 
 	pinctrl {
 		compatible = "rockchip,rk3568-pinctrl";
@@ -6245,18 +6258,10 @@
 	// 	regulator-always-on;
 	// 	regulator-boot-on;
 	// };
-	// chosen {
-	// 	bootargs = "earlycon=uart8250,mmio32,0xfe660000 console=ttyS2,1500000 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
-	// 	stdout-path = "serial2:1500000n8";
-	// 	linux,initrd-start = <0x00 0xa200000>;
-	// 	// linux,initrd-end = <0x00 0xA423E10>;
-	// 	linux,initrd-end = <0x00 0xa600000>;
-	// };
 
 	chosen {
 		bootargs = "earlycon=uart8250,mmio32,0xfe660000 console=ttyFIQ0 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
 		linux,initrd-start = <0x00 0xa200000>;
-		// linux,initrd-end = <0x00 0xA423E10>;
 		linux,initrd-end = <0x00 0xa600000>;
 	};
 
@@ -6287,13 +6292,10 @@
 		interrupts = <0x00 0x49 0x04>;
 	};
 
+	// virtio-console 给zone1作为输出串口，zone1通过hvc0连接
 	hvisor_virtio_device {
 		compatible = "hvisor";
 		interrupt-parent = <0x01>;
 		interrupts = <0x00 0x20 0x01>;
 	};
-};
-
-&display_subsystem {
-    status = "disabled";
 };

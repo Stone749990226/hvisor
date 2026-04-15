@@ -35,7 +35,7 @@
             "type": "io",
             "physical_start": "0xf0000000",
             "virtual_start": "0xf0000000",
-            "size": "0xd400000"
+            "size": "0x00300000"
         },
         {
             "type": "io",
@@ -48,15 +48,13 @@
             "physical_start": "0xfd520000",
             "virtual_start": "0xfd520000",
             "size": "0x1ae0000"
-        },
-        {
-            "type": "io",
-            "physical_start": "0x3c0800000",
-            "virtual_start": "0x3c0800000",
-            "size": "0x400000"
         }
     ],
     "interrupts": [
+        "0x47",
+        "0x48",
+        "0x49",
+        "0x4f",
         "0x42",
         "0x5d",
         "0x5e",
@@ -142,10 +140,6 @@
         "0xbc",
         "0xbf",
         "0xc0",
-        "0xc1",
-        "0xc2",
-        "0xc3",
-        "0xc4",
         "0xc7",
         "0xc8",
         "0xc9",
@@ -297,5 +291,7 @@
         "gicr_size": "0xc0000",
         "gits_base": "0x0",
         "gits_size": "0x0"
-    }
+    },
+    "pci_config": [],
+    "alloc_pci_devs": []
 }

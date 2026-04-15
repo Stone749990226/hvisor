@@ -545,70 +545,70 @@
 	// 	nvmem-cell-names = "id\0cpu-version\0cpu-code";
 	// };
 
-	display-subsystem {
-		compatible = "rockchip,display-subsystem";
-		memory-region = <0x0f 0x10>;
-		memory-region-names = "drm-logo\0drm-cubic-lut";
-		ports = <0x11>;
-		devfreq = <0x12>;
+	// display-subsystem {
+	// 	compatible = "rockchip,display-subsystem";
+	// 	memory-region = <0x0f 0x10>;
+	// 	memory-region-names = "drm-logo\0drm-cubic-lut";
+	// 	ports = <0x11>;
+	// 	devfreq = <0x12>;
 
-		route {
+	// 	route {
 
-			route-dsi0 {
-				status = "okay";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x13>;
-			};
+	// 		route-dsi0 {
+	// 			status = "okay";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x13>;
+	// 		};
 
-			route-dsi1 {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x14>;
-			};
+	// 		route-dsi1 {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x14>;
+	// 		};
 
-			route-edp {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x15>;
-			};
+	// 		route-edp {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x15>;
+	// 		};
 
-			route-hdmi {
-				status = "okay";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x16>;
-			};
+	// 		route-hdmi {
+	// 			status = "okay";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x16>;
+	// 		};
 
-			route-lvds {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x17>;
-			};
+	// 		route-lvds {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x17>;
+	// 		};
 
-			route-rgb {
-				status = "disabled";
-				logo,uboot = "logo.bmp";
-				logo,kernel = "logo_kernel.bmp";
-				logo,mode = "center";
-				charge_logo,mode = "center";
-				connect = <0x18>;
-			};
-		};
-	};
+	// 		route-rgb {
+	// 			status = "disabled";
+	// 			logo,uboot = "logo.bmp";
+	// 			logo,kernel = "logo_kernel.bmp";
+	// 			logo,mode = "center";
+	// 			charge_logo,mode = "center";
+	// 			connect = <0x18>;
+	// 		};
+	// 	};
+	// };
 
 	firmware {
 
