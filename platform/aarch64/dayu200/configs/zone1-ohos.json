@@ -39,15 +39,21 @@
         },
         {
             "type": "io",
-            "physical_start": "0xfd400000",
-            "virtual_start": "0xfd400000",
-            "size": "0x120000"
+            "physical_start": "0xfd520000",
+            "virtual_start": "0xfd520000",
+            "size": "0x1140000"
         },
         {
             "type": "io",
-            "physical_start": "0xfd520000",
-            "virtual_start": "0xfd520000",
-            "size": "0x1ae0000"
+            "physical_start": "0xfd410000",
+            "virtual_start": "0xfd410000",
+            "size": "0x50000"
+        },
+        {
+            "type": "io",
+            "physical_start": "0xfe660000",
+            "virtual_start": "0xfe660000",
+            "size": "0x10000"
         }
     ],
     "interrupts": [
@@ -100,7 +106,7 @@
         "0x93",
         "0x94",
         "0x95",
-        "0x97",
+        "0x96",
         "0x98",
         "0x99",
         "0x9a",
@@ -197,6 +203,7 @@
         "0x119",
         "0x11a",
         "0x11b",
+        "0x11c",
         "0x11d",
         "0x11e",
         "0x11f",
