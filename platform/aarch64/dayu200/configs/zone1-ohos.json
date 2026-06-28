@@ -58,7 +58,8 @@
     ],
     "interrupts": [
         "0x82",
-        "0x96"
+        "0x96",
+        "0x8c"
     ],
     "ivc_configs": [],
     "kernel_filepath": "./zone1-ohos.kernel",

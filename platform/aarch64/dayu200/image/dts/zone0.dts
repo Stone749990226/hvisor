@@ -2284,6 +2284,6 @@
 	hvisor_virtio_device {
 		compatible = "hvisor";
 		interrupt-parent = <0x01>;
-		interrupts = <0x00 0x20 0x01>;
+		interrupts = <0x00 0x6b 0x01>;
 	};
 };

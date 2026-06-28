@@ -440,6 +440,14 @@
 		status = "okay";
 	};
 
+	virtio_mmio@ff9e0000 {
+		dma-coherent;
+		interrupt-parent = <0x01>;
+		interrupts = <0x00 0x6c 0x01>;
+		reg = <0x00 0xff9e0000 0x00 0x200>;
+		compatible = "virtio,mmio";
+	};
+
 	chosen {
 		bootargs = "console=ttyS2,1500000n8 ignore_loglevel loglevel=8 initcall_debug clk_ignore_unused pd_ignore_unused bootslots=0 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe2b0000.dwmmc rw rootwait ohos.required_mount.system=/dev/block/platform/fe2b0000.dwmmc/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe2b0000.dwmmc/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe2b0000.dwmmc/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe2b0000.dwmmc/by-name/bootctrl@none@none@none@wait,required";
 		linux,initrd-start = <0x00 0x50200000>;
