@@ -8,7 +8,6 @@
 
 	aliases {
 		mmc1 = "/dwmmc@fe2b0000";
-		serial2 = "/serial@fe660000";
 	};
 
 	memory {
@@ -427,17 +426,12 @@
 
 	};
 
-	serial@fe660000 {
-		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-		reg = <0x00 0xfe660000 0x00 0x100>;
-		interrupts = <0x00 0x76 0x04>;
-		clocks = <0x24 0x123 0x24 0x120>;
-		clock-names = "baudclk\0apb_pclk";
-		pinctrl-0 = <0x107>;
-		pinctrl-names = "default";
-		reg-io-width = <0x04>;
-		reg-shift = <0x02>;
-		status = "okay";
+	virtio_mmio@ff9d0000 {
+		dma-coherent;
+		interrupt-parent = <0x01>;
+		interrupts = <0x00 0x6e 0x01>;
+		reg = <0x00 0xff9d0000 0x00 0x200>;
+		compatible = "virtio,mmio";
 	};
 
 	virtio_mmio@ff9e0000 {
@@ -449,7 +443,8 @@
 	};
 
 	chosen {
-		bootargs = "console=ttyS2,1500000n8 ignore_loglevel loglevel=8 initcall_debug clk_ignore_unused pd_ignore_unused bootslots=0 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe2b0000.dwmmc rw rootwait ohos.required_mount.system=/dev/block/platform/fe2b0000.dwmmc/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe2b0000.dwmmc/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe2b0000.dwmmc/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe2b0000.dwmmc/by-name/bootctrl@none@none@none@wait,required";
+		bootargs = "earlycon=virtio,mmio,0xff9d0000 console=hvc0 ignore_loglevel loglevel=8 initcall_debug clk_ignore_unused pd_ignore_unused bootslots=0 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe2b0000.dwmmc rw rootwait ohos.required_mount.system=/dev/block/platform/fe2b0000.dwmmc/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe2b0000.dwmmc/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe2b0000.dwmmc/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe2b0000.dwmmc/by-name/bootctrl@none@none@none@wait,required";
+		stdout-path = "/virtio_mmio@ff9d0000";
 		linux,initrd-start = <0x00 0x50200000>;
 		linux,initrd-end = <0x00 0x50600000>;
 	};

@@ -21,6 +21,12 @@
         },
         {
             "type": "virtio",
+            "physical_start": "0xff9d0000",
+            "virtual_start": "0xff9d0000",
+            "size": "0x200"
+        },
+        {
+            "type": "virtio",
             "physical_start": "0xff9e0000",
             "virtual_start": "0xff9e0000",
             "size": "0x200"
@@ -48,18 +54,12 @@
             "physical_start": "0xfd410000",
             "virtual_start": "0xfd410000",
             "size": "0x50000"
-        },
-        {
-            "type": "io",
-            "physical_start": "0xfe660000",
-            "virtual_start": "0xfe660000",
-            "size": "0x10000"
         }
     ],
     "interrupts": [
         "0x82",
-        "0x96",
-        "0x8c"
+        "0x8c",
+        "0x8e"
     ],
     "ivc_configs": [],
     "kernel_filepath": "./zone1-ohos.kernel",

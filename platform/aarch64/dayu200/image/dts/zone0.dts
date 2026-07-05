@@ -1282,19 +1282,19 @@
 		clock-names = "pclk\0timer";
 	};
 
-	// serial@fe660000 {
-	// 	compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
-	// 	reg = <0x00 0xfe660000 0x00 0x100>;
-	// 	interrupts = <0x00 0x76 0x04>;
-	// 	clocks = <0x24 0x123 0x24 0x120>;
-	// 	clock-names = "baudclk\0apb_pclk";
-	// 	dmas = <0x48 0x04 0x48 0x05>;
-	// 	pinctrl-0 = <0x107>;
-	// 	pinctrl-names = "default";
-	// 	reg-io-width = <0x04>;
-	// 	reg-shift = <0x02>;
-	// 	status = "disabled";
-	// };
+	serial@fe660000 {
+		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
+		reg = <0x00 0xfe660000 0x00 0x100>;
+		interrupts = <0x00 0x76 0x04>;
+		clocks = <0x24 0x123 0x24 0x120>;
+		clock-names = "baudclk\0apb_pclk";
+		dmas = <0x48 0x04 0x48 0x05>;
+		pinctrl-0 = <0x107>;
+		pinctrl-names = "default";
+		reg-io-width = <0x04>;
+		reg-shift = <0x02>;
+		status = "okay";
+	};
 
 	serial@fe670000 {
 		compatible = "rockchip,rk3568-uart\0snps,dw-apb-uart";
@@ -1307,7 +1307,7 @@
 		pinctrl-names = "default";
 		reg-io-width = <0x04>;
 		reg-shift = <0x02>;
-		status = "okay";
+		status = "disabled";
 	};
 
 	pinctrl {
@@ -2276,7 +2276,7 @@
 	};
 
 	chosen {
-		bootargs = "console=ttyS3,115200n8 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
+		bootargs = "earlycon=uart8250,mmio32,0xfe660000 console=ttyS2,1500000n8 ohos.boot.eng_mode=on root=PARTUUID=614e0000-0000 hardware=rk3568 default_boot_device=fe310000.sdhci rw rootwait ohos.required_mount.system=/dev/block/platform/fe310000.sdhci/by-name/system@/usr@ext4@ro,barrier=1@wait,required ohos.required_mount.vendor=/dev/block/platform/fe310000.sdhci/by-name/vendor@/vendor@ext4@ro,barrier=1@wait,required ohos.required_mount.misc=/dev/block/platform/fe310000.sdhci/by-name/misc@none@none@none@wait,required ohos.required_mount.bootctrl=/dev/block/platform/fe310000.sdhci/by-name/bootctrl@none@none@none@wait,required";
 		linux,initrd-start = <0x00 0xa200000>;
 		linux,initrd-end = <0x00 0xa600000>;
 	};
